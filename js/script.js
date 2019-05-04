@@ -79,8 +79,8 @@ project 1 - A Random Quote Generator
 every times that a page reloads or a new quote is generated.
 */
 
-var randBackground = (function() {
-  var rand = function(min, max) {
+let randBackground = (function() {
+  let rand = function(min, max) {
     return Math.floor(Math.random() * (max-min+1)+min);
 }
     return function(){
@@ -102,7 +102,7 @@ function changeBackgroundColor() {
 
 
 function getRandomQuote() {
-    var random_nub = Math.floor(Math.random() * (quotes.length));
+    let random_nub = Math.floor(Math.random() * (quotes.length));
     return quotes[random_nub];
 }
 
@@ -120,10 +120,11 @@ function getRandomQuote() {
 ***/
 
 function printQuote(){
+  changeBackgroundColor();
 
   let callQuote = getRandomQuote(quotes);
-  var x = callQuote;
-  var quote = "<p class='quote'>"+ x.quote +"</p>";
+  let x = callQuote;
+  let quote = "<p class='quote'>"+ x.quote +"</p>";
   quote +=  "<p class='source'>"+ x.source +"</p>";
   if(x.citation !== ''){
     quote += "<span class='source'>"+ x.citation +"</span>";
