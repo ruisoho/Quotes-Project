@@ -79,26 +79,16 @@ project 1 - A Random Quote Generator
 every times that a page reloads or a new quote is generated.
 */
 
-let randBackground = (function() {
-  let rand = function(min, max) {
-    return Math.floor(Math.random() * (max-min+1)+min);
-}
-    return function(){
-    return 'rgb('+rand(0,255)+','+rand(0,255)+','+rand(0,255)+')';
-};
+function random_bg_color() {
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+  
+    document.body.style.background = bgColor;
+    }
 
-})();
-
-
-function changeBackgroundColor() {
-  let backgroundColor = getRandomQuote(randBackground);
-  document.body.style.backgroundColor = backgroundColor;
-
-  //This will set the background color of the 'click' button to the new background color
- document.getElementById("loadQuote").style.backgroundColor = backgroundColor;
-}
-
-
+random_bg_color();
 
 
 function getRandomQuote() {
@@ -120,7 +110,7 @@ function getRandomQuote() {
 ***/
 
 function printQuote(){
-  changeBackgroundColor();
+  random_bg_color();
 
   let callQuote = getRandomQuote(quotes);
   let x = callQuote;
