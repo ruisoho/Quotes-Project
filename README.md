@@ -1,2 +1,2 @@
-# Tree House Tech Degree - Project 1
+# A random Quote texts with changing background, with each new Quote loaded.
 
